@@ -44,10 +44,7 @@ class FolderLinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 		$path = $this->arguments['path'];
 		$basepath = $this->arguments['basepath'];
 		$user = $this->arguments['txfeuser'];
-		//$pathinfo['path']=$path;
-		//$pathinfo['basepath']=$basepath;
 		$isadmin=$user->checkFileadmin();
-		//$pathinfo['basepathtest'] = \TYPO3\CMS\Core\Utility\PathUtility::basename($basepath);
 		If (($basepath != "") && ($user)) { //path basepath and user is defined!
 		    $isupperpath = stripos($path, \TYPO3\CMS\Core\Utility\PathUtility::basename($basepath)); // pfad oberhalb definierten Bereich
 		    //$pathinfo['oldpath']=$path;
