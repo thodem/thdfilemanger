@@ -375,7 +375,6 @@ class TxthdfilemanagerController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $basehelperobj = $this->objectManager->get('\Td\Thdfilemanager\Utility\Basehelper');
         $settings = $this->settings;
         $this->aktbasisverzeichnis = $basehelperobj->getBasisverz($settings);
-		//$this->aktbasisverzeichnis = $basehelperobj->getBasisverz($settings);
         $file = $this->aktbasisverzeichnis.$aktfolder."/".$fileName;        
         //print($file);
         if(is_file($file)) {
@@ -535,8 +534,6 @@ class TxthdfilemanagerController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 		$test = $basehelperobj ->filePathAllowed($this->user, $filepath, $settings, $this->aktbasisverzeichnis);
 		$arguments = array();
 		$arguments['aktpath'] = $this->aktuserpath;
-		//$this->redirect('list');
-		
 		$this->redirect('list', NULL, NULL, $arguments);
 	}
 
