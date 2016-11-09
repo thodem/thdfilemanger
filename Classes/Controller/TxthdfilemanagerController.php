@@ -520,9 +520,6 @@ class TxthdfilemanagerController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 	 * @return void
 	 */
 	public function diropenAction($aktfolder) {
-		//print_r($aktfolder);
-		//print("<br>aktDateiverzeichnis");
-		//print_r($aktDateiverzeichnis);
 		if($aktfolder !="" ) {
 			$aktfolder = "/".ltrim($aktfolder, '/');
 			}
@@ -590,10 +587,6 @@ class TxthdfilemanagerController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 		//$filarr = array();
 		$aktfolders = array();
 		$aktfolders = GeneralUtility::getAllFilesAndFoldersInPath($filarr, $path, $extList, 1, 99, $excludePattern);
-		//$files = GeneralUtility::getFilesInDir($path, $extensionList, $prependPath, $order, $excludePattern);
-		//print 'aktfolders \n';
-		//print_r($aktfolders);
-		//print_r($filarr);
 		return $aktfolders;
 	}
 
