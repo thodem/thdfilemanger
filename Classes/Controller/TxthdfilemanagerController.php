@@ -289,8 +289,7 @@ class TxthdfilemanagerController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 		$this->view->assignMultiple(array(
 				'newFiles', $newFiles,
 				'aktUserverzeichnis' => $aktfolder
-			));
-			
+			));	
 	}
 	
 	/**
@@ -325,7 +324,6 @@ class TxthdfilemanagerController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 					else {
 						$this->addFlashMessage(LocalizationUtility::translate('uploadFailureInfo', 'thdfilemanager')." ".$filedat['name'], '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 					}	
-
 				}
 			}
 		}
