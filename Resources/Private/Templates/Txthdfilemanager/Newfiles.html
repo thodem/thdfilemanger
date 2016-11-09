@@ -1,0 +1,48 @@
+
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<div class="uploadsection">
+<h3><f:translate key='tx_thdfilemanager_domain_model_txthdfilemanager.uploadfilesheader'  /> {aktUserverzeichnis}</h3>
+
+<f:flashMessages renderMode="div" />
+
+<f:render partial="FormErrors" arguments="{object:Files}" />
+
+
+<f:form action="createfile"  name="newFiles" id="newFiles" object="{newFiles}" enctype="multipart/form-data" class="form-horizontal col-sm-12 col-md-11 col-lg-10">
+	<div class="uplaudrowwrp">
+		<f:render partial="Files/FormFields" />
+	</div>
+	<div class="col-sm-12 form-group rowbtnwrp">
+		
+		<div class="col-sm-2 col-md-offset-2">
+			<span class="btn uploadaddbtn actionbtn aktiviert" data-toggle="tooltip" data-placement="bottom" title="{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.adduploadrow')}" >
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
+			</span>
+		</div>
+		<div class="col-sm-8"> </div>
+	</div>
+	<f:form.hidden name="aktfolder" value='{aktUserverzeichnis}' />
+	
+	<div class="form-group">
+		<div class="col-sm-offset-3 col-sm-4 .col-xs-6 tx_thd_backtolist newlink backlink"><f:link.action action="list" arguments="{aktpath : aktUserverzeichnis}"><f:translate key="tx_thdfilemanager_domain_model_txthdfilemanager.backtolist" /></f:link.action></div>
+		
+		<div class="col-sm-4 .col-xs-6 col-sm-offset-1 newlink createnew">
+			<f:form.submit value="<f:translate key='tx_thdfilemanager_domain_model_txthdfilemanager.startupload'  />" class="btn btn-primary form-control createnew" />
+		</div>
+	</div>
+</f:form>
+</div>
+</f:section>

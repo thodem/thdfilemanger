@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-06-08T15:11:30Z" product-name="thdfilemanager">
+		<header/>
+		<body>
+			<trans-unit id="thdfilemangaeradmin.description">
+				<source>thdfilemangaeradmin</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

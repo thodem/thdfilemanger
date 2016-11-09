@@ -1,0 +1,29 @@
+
+plugin.tx_thdfilemanager {
+	view {
+		# cat=plugin.tx_thdfilemanager/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:thdfilemanager/Resources/Private/Templates/
+		# cat=plugin.tx_thdfilemanager/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:thdfilemanager/Resources/Private/Partials/
+		# cat=plugin.tx_thdfilemanager/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:thdfilemanager/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_thdfilemanager//a; type=string; label=Default storage PID
+		storagePid =
+	}
+	settings {
+		dateiverzeichnis = user_upload/feuserdaten/
+		# cat=plugin.tx_thdfilemanager/setting; type=integer; label=uid of the FE-fileadmin group
+		dateiadmingrp = 1
+		# cat=plugin.tx_thdfilemanager/setting; type=integer; label=uid of the FE-fileuser group
+		dateiusergrp = 2
+		# cat=plugin.tx_thdfilemanager/setting; type=boolean; label=show normal FE-fileuser rootpath too  (FE)
+		showrootnusrtoo = 0
+		# cat=plugin.tx_thdfilemanager/setting; type=string; label=commaseperated list of allowed extensions 
+		anzextlist = jpeg,jpg,png,gif,tif,tiff,pdf,doc,docx,dot,odf,ods,ots,odt,ott,rtf,txt,xlsx,eps,ai,ait,psd,xml,xls,odp,otp,odg,ppt,pps,pptx,ppsx,pot,idd,indd,indt,inx,tar,zip,sit,sitx,gz,m4a,f4a,f4b,oga,ogg,flv,swf,svg,svgz,rar
+		anzexcludePattern = \.(D|h).*
+		# cat=plugin.tx_thdfilemanager/setting; type=string; label=commaseperated list of extensions which create a direct downloadlink
+		directdownloadext = zip,sit,sitx,rar,svgz,gz
+		}
+}

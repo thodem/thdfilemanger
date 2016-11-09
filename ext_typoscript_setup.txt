@@ -1,0 +1,34 @@
+
+config.tx_extbase{
+    persistence{
+        classes{
+
+            TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
+                subclasses {
+                    Tx_Thdfilemanager_Txthdfilemanager = Td\Thdfilemanager\Domain\Model\Txthdfilemanager
+					
+          		}
+            }
+            TYPO3\CMS\Extbase\Domain\Model\FrontendUserGroup {
+                subclasses {
+                    Tx_Thdfilemanager_FEgroups = Td\Thdfilemanager\Domain\Model\FEgroups
+					
+          		}
+            }
+            Td\Thdfilemanager\Domain\Model\Txthdfilemanager {
+                mapping {
+                    tableName = fe_users
+                    recordType = Tx_Thdfilemanager_Txthdfilemanager
+                }
+            }
+            
+            Td\Thdfilemanager\Domain\Model\FEgroups {
+                mapping {
+                    tableName = fe_groups
+                    recordType = Tx_Thdfilemanager_FEgroups
+                }
+            }
+            
+    	}
+    }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-06-08T15:11:30Z" product-name="thdfilemanager">
+		<header/>
+		<body>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager">
+				<source>Txthdfilemanager</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.foldername">
+				<source>Foldername</source>
+			</trans-unit>
+			<trans-unit id="fe_users.tx_extbase_type.Tx_Thdfilemanager_Txthdfilemanager">
+				<source>Dateimanager Txthdfilemanager</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_fegroups">
+				<source>FEgroups</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_fegroups.thdfilemangaeradmin">
+				<source>Thdfilemangaeradmin</source>
+			</trans-unit>
+			<trans-unit id="fe_groups.tx_extbase_type.Tx_Thdfilemanager_FEgroups">
+				<source>Dateimanager FEgroups</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

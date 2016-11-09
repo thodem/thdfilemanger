@@ -1,0 +1,33 @@
+
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h2><f:translate key="tx_thdfilemanager_domain_model_txthdfilemanager.newFilemanager" /></h2>
+
+<f:flashMessages renderMode="div" />
+
+<f:render partial="FormErrors" arguments="{object:Txthdfilemanager}" />
+
+<f:form action="create"  name="newTxthdfilemanager" object="{newTxthdfilemanager}" class="form-horizontal col-sm-12 col-md-11 col-lg-10">
+<f:render partial="Txthdfilemanager/FormFields" />
+<div class="form-group">
+		
+	<div class="col-md-3 col-sm-offset-3 col-sm-4 .col-xs-6 tx_thd_backtolist newlink backlink"><f:link.action action="list" arguments="{aktpath : aktUserverzeichnis}" class="btn"><f:translate key="tx_thdfilemanager_domain_model_txthdfilemanager.backtolist" /></f:link.action></div>
+	<div class="col-md-4 col-sm-4 .col-xs-6 col-sm-offset-1 col-md-offset-2 newlink createnew">
+		<f:form.submit value="<f:translate key='tx_thdfilemanager_domain_model_txthdfilemanager.createnewUser'  />" class="btn btn-primary form-control createnew" />
+	</div>
+</div>
+</f:form>
+
+</f:section>
