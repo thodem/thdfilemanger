@@ -1,0 +1,60 @@
+{namespace tvhs = Td\Thdfilemanager\ViewHelpers}
+{namespace finst = TYPO3\CMS\Install\ViewHelpers}
+
+
+<table  class="tx_folderlist table table-hover" >
+<f:if condition='{upperfolder.allowed}'><f:then>
+	<tr>
+		<td class="col-sm-6">
+			
+				<f:link.action action="diropen" arguments="{aktfolder : upperfolder.newpath}"><span class="glyphicon glyphicon-level-up"> ...</span></f:link.action>
+			
+		</td>
+		<td class="col-sm-1"> </td>
+		<td class="col-sm-5"> </td>
+	</tr>
+</f:then></f:if>
+<f:for each="{tvhs:media.folder(path: '{aktbasisverzeichnis}{aktUserverzeichnis}', upperpath: '{aktUserverzeichnis}', prependPath: 1, order: '')}" as="aktfile" key="afname">
+	<tr>
+		<td class="col-sm-6"><f:link.action action="diropen" arguments="{aktfolder : aktfile.filepath}"><span class="glyphicon glyphicon-folder-close"> </span> {afname}</f:link.action></td>
+		<td class="col-sm-5"> </td>
+		<td class="col-sm-1">
+		    <f:if condition='{aktfile.notempty}'><f:then>
+				<button class="rmbtn actionbtn {aktfile.emptyclass}" data-toggle="modal" data-target="#folderdelmodal" aktfolder="{aktUserverzeichnis}" data-delfolder="{aktfile.filepath}" data-delname="{afname}" data-placement="top" title="{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.deletefolder')}" >
+						<span class="glyphicon glyphicon-remove-circle" aria-hidden="true" data-delname="{afname}"> </span>
+					</button>
+				<f:link.action action="dirdelete" arguments="{aktfolder : aktUserverzeichnis, delfolder : aktfile.filepath}" title="<f:translate key='tx_thdfilemanager_domain_model_txthdfilemanager.deletefolder' />" class="delorgbtn {aktfile.emptyclass}">
+				
+				</f:link.action>
+			</f:then>
+			<f:else>
+				<span type="button" class="actionbtn {aktfile.emptyclass}" data-toggle="tooltip" data-placement="top" title="{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.foldernotempty')}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"> </span></span>
+			</f:else>
+		
+		</f:if>
+		</td>
+	</tr>
+</f:for>	
+</table>
+
+<div class="modal fade" id="folderdelmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.deletefolder')} : <span class="filedeletename"> <span></h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        <span class="bodypart1">{f:translate(id: 'deletefoldermssagebodyprt1')} </span>
+        <span class="bdydeletename"> </span>
+        <span class="bodypart2">{f:translate(id: 'deletefoldermssagebodyprt2')}</span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.back')}</button>
+        <button type="button" class="btn btn-primary">{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.deletefolder')}</button>
+      </div>
+    </div>
+  </div>
+</div>

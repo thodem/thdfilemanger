@@ -1,0 +1,150 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    571,
+                    68
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": []
+                },
+                "name": "Txthdfilemanager",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "fe_users",
+                    "parentClass": "\\TYPO3\\CMS\\Extbase\\Domain\\Model\\FrontendUser",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "510516240198"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "foldername",
+                            "propertyType": "String",
+                            "uid": "294566596521"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    125,
+                    77
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "FEgroups",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "fe_groups",
+                    "parentClass": "\\TYPO3\\CMS\\Extbase\\Domain\\Model\\FrontendUserGroup",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "1205298428296"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "thdfilemangaeradmin",
+                            "propertyType": "Boolean",
+                            "uid": "54118843480"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "Frontend-Dateiverwaltung",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": ""
+        },
+        "extensionKey": "thdfilemanager",
+        "name": "Dateimanager",
+        "originalExtensionKey": "thdfilemanager",
+        "persons": [],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": "FileUserAdmin =>create, delete, edit, filedelete",
+                    "switchableActions": ""
+                },
+                "key": "useradmin",
+                "name": "Frontend-Dateiverwaltung"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Folderadmin =>create, delete, edit",
+                    "noncacheableActions": "Folderadmin =>create, delete, edit",
+                    "switchableActions": ""
+                },
+                "key": "folderadmin",
+                "name": "Dateiverzeichnis"
+            }
+        ],
+        "vendorName": "Td"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2015-06-08 03:11",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (5)"
+    }
+}

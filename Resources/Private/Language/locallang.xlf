@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-06-08T15:11:30Z" product-name="thdfilemanager">
+		<header/>
+		<body>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager">
+				<source>Txthdfilemanager</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.newFilemanager">
+				<source>Benutzer anlegen</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.foldername">
+				<source>Verzeichnisname:</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.username">
+				<source>Benutzername</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_fegroups">
+				<source>FEgroups</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_fegroups.thdfilemangaeradmin">
+				<source>Thdfilemangaeradmin</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.uploadfiles">
+				<source>Dateien hochladen</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.uploadfilesheader">
+				<source>Dateien hochladen nach:</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.filelabel">
+				<source>Datei</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.startupload">
+				<source>hochladen</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.newfolder">
+				<source>neues Verzeichnis anlegen</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.createnewFolder">
+				<source>anlegen</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.deletefolder">
+				<source>Ordner löschen</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.deletefile">
+				<source>Datei löschen</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.backtolist">
+				<source>zurück zur Listenansicht</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.password">
+				<source>Passwort:</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.email">
+				<source>Mailadresse:</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.createnewUser">
+				<source>neuen Benutzer anlegen</source>
+			</trans-unit>
+			<trans-unit id="createFrontendFileUserInfo">
+				<source>Der Benutzer wird angelegt: </source>
+			</trans-unit>
+			<trans-unit id="deleteFrontendFileUserInfo">
+				<source>Benutzer löschen: </source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.deleteuser">
+				<source>Benutzer löschen</source>
+			</trans-unit>
+			<trans-unit id="deleteusermssagebodyprt1">
+				<source>Soll der folgende Benutzer gelöscht werden: </source>
+			</trans-unit>
+			<trans-unit id="deleteusermssagebodyprt2">
+				<source> ?</source>
+			</trans-unit>
+			<trans-unit id="deleteusermssagebodyprt3">
+				<source>Der zugehörige Ordner wird nicht gelöscht:  </source>
+			</trans-unit>
+			<trans-unit id="deleteusermssagebodyprt4">
+				<source>Dieser muss manuell nach Entfernen aller enthaltenen Ordner und Dateien gelöscht werden!</source>
+			</trans-unit>
+			<trans-unit id="uploadAccessInfo">
+				<source>Datei wurde erfolgreich hochgeladen: </source>
+			</trans-unit>
+			<trans-unit id="uploadWrongExtInfo">
+				<source>Die Dateiextension ist nicht erlaubt für: </source>
+			</trans-unit>
+			<trans-unit id="uploadFailureInfo">
+				<source>Datei konnte nicht hochgeladen werden! : </source>
+			</trans-unit>
+			<trans-unit id="fileDeleteSuccInfo">
+				<source>Die Datei wurde gelöscht: </source>
+			</trans-unit>
+			<trans-unit id="fileDeleteFailureInfo">
+				<source>Fehler!  Die Datei konnte nicht gelöscht werden: </source>
+			</trans-unit>
+			<trans-unit id="deletefilemssagebodyprt1">
+				<source>Soll die folgende Datei gelöscht werden: </source>
+			</trans-unit>
+			<trans-unit id="deletefilemssagebodyprt2">
+				<source> ?</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.downloadfile">
+				<source>Datei herunterladen</source>
+			</trans-unit>
+			
+			<trans-unit id="folderalreadyExistInfo">
+				<source>Das Verzeichnis existiert schon:</source>
+			</trans-unit>
+			<trans-unit id="folderCreateSuccInfo">
+				<source>Das Verzeichnis wurde angelegt:</source>
+			</trans-unit>
+			<trans-unit id="folderCreateFailureInfo">
+				<source>Fehler!  Das Verzeichnis konnte nicht angelegt werden:</source>
+			</trans-unit>
+			<trans-unit id="folderDeleteSuccInfo">
+				<source>Das Verzeichnis wurde gelöscht:</source>
+			</trans-unit>
+			<trans-unit id="folderDeleteFailureInfo">
+				<source>Fehler! Das Verzeichnis konnte nicht gelöscht werden:</source>
+			</trans-unit>
+			<trans-unit id="mailSendEror">
+				<source>Fehler beim Mailversand</source>
+			</trans-unit>
+			<trans-unit id="deletefoldermssagebodyprt1">
+				<source>Soll der folgende Ordner gelöscht werden: </source>
+			</trans-unit>
+			<trans-unit id="deletefoldermssagebodyprt2">
+				<source> ?</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.foldernotempty">
+				<source>Dieser Ordner ist nicht leer und kann deshalb nicht gelöscht werden!</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.back">
+				<source>zurück</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.adduploadrow">
+				<source>weiteren Dateiupload hinzufügen</source>
+			</trans-unit>
+			<trans-unit id="tx_thdfilemanager_domain_model_txthdfilemanager.removeuploadrow">
+				<source>Dateiuploadzeile entfernen</source>
+			</trans-unit>
+		</body>
+	</file>
+	
+</xliff>

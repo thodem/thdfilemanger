@@ -1,0 +1,92 @@
+{namespace tvhs = Td\Thdfilemanager\ViewHelpers}
+{namespace finst = TYPO3\CMS\Install\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+	<f:flashMessages renderMode="div" class="alert alert-info " />
+
+
+
+	<f:if condition='{tvhs:helpers.fileadmin(txfeuser:\'{aktUser}\')}'><f:then>
+    <div class="table-responsive">
+		<table  class="table table-condensed tx_thdfilemanager" >
+			<tr>
+				<th class="col-sm-3"><f:translate key="tx_thdfilemanager_domain_model_txthdfilemanager.username" /> </th>
+				<th class="col-sm-6"><f:translate key="tx_thdfilemanager_domain_model_txthdfilemanager.foldername" /></th>
+				<th class="col-sm-1"> </th>
+			</tr>
+
+			<f:for each="{txthdfilemanagers}" as="txthdfilemanager">
+				<f:if condition="{txthdfilemanager.uid} != {aktUser.uid}">
+					<tr>
+						<td class="col-sm-4">{txthdfilemanager.username}</td>
+						<td class="col-sm-7"><f:link.action action="diropen" arguments="{aktfolder : txthdfilemanager.foldername}">{txthdfilemanager.foldername}</f:link.action></td>
+						<td class="col-sm-1">
+							<button class="rmbtn actionbtn aktiviert" data-toggle="modal" data-target="#userdelmodal" data-userfolder="{txthdfilemanager.foldername}" data-delname="{txthdfilemanager.username}" data-placement="top" title="{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.deleteuser')}" >
+								<span class="glyphicon glyphicon-remove-circle" aria-hidden="true" data-delname="{afname}"> </span>
+							</button>
+							<f:link.action action="delete" arguments="{txthdfilemanager : txthdfilemanager}" class="delorgbtn"></f:link.action>
+						</td>
+					</tr>
+				</f:if>
+			</f:for>
+		</table>
+    </div>
+	<f:link.action action="new" arguments="{aktfolder : aktUserverzeichnis}"><f:translate key="tx_thdfilemanager_domain_model_txthdfilemanager.newFilemanager" /></f:link.action>
+	<br /><br />
+	</f:then></f:if>
+	
+<div class="modal fade" id="userdelmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.deleteuser')} : <span class="userdeletename"> <span></h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        <span class="bodypart1">{f:translate(id: 'deleteusermssagebodyprt1')} </span>
+        <span class="bdydeletename"> </span>
+        <span class="bodypart2">{f:translate(id: 'deleteusermssagebodyprt2')}</span><br />
+        <span class="bodypart3">{f:translate(id: 'deleteusermssagebodyprt3')}</span>
+        
+        <span class="bdydeletefoldername"> </span>!<br />
+        <span class="bodypart3">{f:translate(id: 'deleteusermssagebodyprt4')}</span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.back')}</button>
+        <button type="button" class="btn btn-primary">{f:translate(id: 'tx_thdfilemanager_domain_model_txthdfilemanager.deleteuser')}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	<h3>aktueller Pfad: 
+		<f:if condition="{aktUserverzeichnis} != ''">
+			<f:then>{aktUserverzeichnis}</f:then>
+			<f:else>/</f:else>
+		</f:if>
+	</h3>
+
+
+	<f:render partial="Folders/Folderlist" arguments="{aktbasisverzeichnis:aktbasisverzeichnis,aktUserverzeichnis:aktUserverzeichnis,extensionList:extensionList,excludePattern:excludePattern,aktUser:aktUser,upperfolder:upperfolder}" /> 
+
+	<f:render partial="Files/Filelist" arguments="{aktbasisverzeichnis:aktbasisverzeichnis,aktUserverzeichnis:aktUserverzeichnis,extensionList:extensionList,excludePattern:excludePattern,aktUser:aktUser,dirdwnload:settings.directdownloadext}" /> 
+	<div class="btnwrapper">
+		<div class="btn-alignleft col-sm-4 tx_thd_uplnew newlink btn"><f:link.action action="newfiles" arguments="{aktfolder : aktUserverzeichnis}"><f:translate key="tx_thdfilemanager_domain_model_txthdfilemanager.uploadfiles" /></f:link.action></div>
+		<div class="btn col-sm-4  tx_thd_newfolder newlink"><f:link.action action="newfolder" arguments="{aktfolder : aktUserverzeichnis}"><f:translate key="tx_thdfilemanager_domain_model_txthdfilemanager.newfolder" /></f:link.action></div>
+	</div>
+</f:section>

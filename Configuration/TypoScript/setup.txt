@@ -1,0 +1,191 @@
+page.jsFooterInline.1333 =COA
+page.jsFooterInline.1333.200 = COA
+page.jsFooterInline.1333.200 {
+	wrap= $(function () {|})
+	10 = TEXT
+	10.value (
+	  $('[data-toggle="tooltip"]').tooltip();
+	  $('.actionbtn.aktiviert').tooltip();
+	) #value
+	
+	20 = TEXT
+	20.value (
+	$('#folderdelmodal').on('show.bs.modal', function (event) {
+		  var button = $(event.relatedTarget); // Button that triggered the modal
+		  var recipient = button.parent().children("a.delorgbtn");
+		  var fname = button.data('delname');
+		  var fpfad = button.data('delfolder');
+  
+		  var modal = $(this);
+		  modal.find('.modal-title .filedeletename').text(fname);
+		  modal.find('.modal-body .bdydeletename').text(fpfad);
+		  modal.find('.modal-footer button.btn-primary').click(function() {
+			 modal.modal('hide');
+			window.location.href = recipient.attr('href');
+		  })
+  });
+	 
+) #value
+	50 = TEXT
+	50.value (
+	$('#filedelmodal').on('show.bs.modal', function (event) {
+		  var button = $(event.relatedTarget); // Button that triggered the modal
+		  var recipient = button.parent().children("a.delorgbtn");
+		  var fname = button.data('delname');
+		  var fpfad = button.data('aktfolder')+"/"+fname;
+  
+		  var modal = $(this);
+		  modal.find('.modal-title .filedeletename').text(fname);
+		  modal.find('.modal-body .bdydeletename').text(fpfad);
+		  modal.find('.modal-footer button.btn-primary').click(function() {
+			 modal.modal('hide');
+			window.location.href = recipient.attr('href');
+		  })
+		});
+	 
+) #value
+	70 = TEXT
+	70.value (
+	$('#userdelmodal').on('show.bs.modal', function (event) {
+		  var button = $(event.relatedTarget); // Button that triggered the modal
+		  var recipient = button.parent().children("a.delorgbtn");
+		  var fname = button.data('delname');
+		  var fpfad = button.data('userfolder');
+  
+		  var modal = $(this);
+		  modal.find('.modal-title .userdeletename').text(fname);
+		  modal.find('.modal-body .bdydeletename').text(fname);
+		  modal.find('.modal-body .bdydeletefoldername').text(fpfad);
+  
+		  modal.find('.modal-footer button.btn-primary').click(function() {
+			 modal.modal('hide');
+			window.location.href = recipient.attr('href');
+		  })
+		});
+) #value
+	100 = TEXT
+	100.value (
+		$('.uploadaddbtn').click( function() {
+			
+			var button = $(this);
+			var outerformelem = button.parent().parent().parent().children('.uplaudrowwrp');
+			var newline = outerformelem.children('.uploadpart').last().clone();
+			
+			var newlinenumber = newline.find('span.filenr');
+			//var newlinenumberval = parseInt(newlinenumber.text(), 10)+1;
+			newlinenumber.text(newlinenumberval);
+			var fileinputelem = newline.find('input.uploadfile');
+			var fileinputelemParent = newline.children('.inputwrp');
+			var fileinputname = fileinputelem.attr('name').trim();
+			var pos1 = fileinputname.lastIndexOf(']');
+			var pos2 = fileinputname.substr(0, pos1).lastIndexOf('[');
+			
+			var newlinenumberval = parseInt(fileinputname.substr(pos2+1,(pos1-pos2-1)))+1;
+			
+			var newfileinputname = fileinputname.substr(0,pos2+1);
+			
+			newfileinputname=newfileinputname+newlinenumberval+"]";
+			//alert(newfileinputname);
+			fileinputelem.after('<input type=\"file\" name=\"' + newfileinputname + '\" class=\"uploadfile\">');
+			fileinputelem.remove();
+			newline.appendTo(outerformelem);
+			$('.uploadremvebtn.aktiviert').tooltip();
+			aktiviereremovebtn();
+		}); 
+	) //value
+    120 = TEXT
+	120.value (
+		function aktiviereremovebtn() {
+				$('.uploadremvebtn').click( function() {
+				if (testfileuplanzahl()) {
+					var button = $(this);
+					var outerformelem = button.parent().parent();
+					//alert(outerformelem.attr('class'));
+					outerformelem.remove();
+					aktiviereremovebtn();
+				}
+				}); 
+			if (testfileuplanzahl()) {
+				$('.uploadremvebtn').addClass('aktiviert');
+				$('.uploadremvebtn').removeClass('inactive');
+				$('.uploadremvebtn.aktiviert').tooltip();
+			}
+			else {
+				$('.uploadremvebtn').addClass('inactive').removeClass('aktiviert');
+			
+			};
+			
+		};
+	) //value
+	130 = TEXT
+	130.value (
+		function testfileuplanzahl() {
+			return ($('.uploadpart').length > 1);
+		};
+	) //value
+	140 = TEXT
+	140.value (
+		aktiviereremovebtn();
+	) //value
+} #jsFooterInline.1333.200
+
+
+plugin.tx_thdfilemanager {
+	view {
+		templateRootPath = {$plugin.tx_thdfilemanager.view.templateRootPath}
+		partialRootPath = {$plugin.tx_thdfilemanager.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_thdfilemanager.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_thdfilemanager.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+	settings {
+		dateiverzeichnis = {$plugin.tx_thdfilemanager.settings.dateiverzeichnis}
+		dateiadmingrp = {$plugin.tx_thdfilemanager.settings.dateiadmingrp}
+		dateiusergrp = {$plugin.tx_thdfilemanager.settings.dateiusergrp}
+		showrootnusrtoo = {$plugin.tx_thdfilemanager.settings.showrootnusrtoo}
+		anzextlist = {$plugin.tx_thdfilemanager.settings.anzextlist}
+		directdownloadext = {$plugin.tx_thdfilemanager.settings.directdownloadext}
+		anzexcludePattern = {$plugin.tx_thdfilemanager.settings.anzexcludePattern}	
+		mailsender {
+			name = tomghost
+			email = thdemel@anima-media.de
+		}
+	}
+
+} 
+
+plugin.tx_thdfilemanager._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-thdfilemanager table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	div.newlink {
+		display: inline-block;
+	}
+	.uploadremvebtn.inactive {
+		display: none;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+	}
+
+)
